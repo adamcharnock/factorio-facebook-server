@@ -1,3 +1,6 @@
 ansible.cfg
 hosts
 galaxy-roles
+.unison.*
+.vault_pass
+.envrc

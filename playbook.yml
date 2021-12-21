@@ -4,6 +4,8 @@
   become: yes
   vars_files:
     - "secrets.yml"
+  vars:
+    server_version: "1.1.49"
 
   roles:
 
@@ -11,6 +13,7 @@
       service_port: 50001
       service_name: factorio_1
       service_root: /home/{{ service_user }}/{{ service_name }}
+      factorio_initial_save: "vanilla.zip"
 
       factorio_server_settings:
         name: "Facebook Factorio Group - Vanilla"
@@ -23,20 +26,153 @@
 
       factorio_server_mod_list:
         mods:
-          - name: clock
-            enabled: yes
-          - name: FARL
-            enabled: yes
+        - name: AfraidOfTheDark
+          enabled: true
+        - name: AutoDeconstruct
+          enabled: true
+        - name: BigBags
+          enabled: true
+        - name: Big_Brother
+          enabled: true
+        - name: Bottleneck
+          enabled: true
+        - name: clock
+          enabled: true
+        - name: Companion_Drones
+          enabled: true
+        - name: EnableResearchQueue
+          enabled: true
+        - name: even-distribution
+          enabled: true
+        - name: far-reach
+          enabled: true
+        - name: FARL
+          enabled: true
+        - name: flib
+          enabled: true
+        - name: jetpack
+          enabled: true
+        - name: Kux-OrbitalIonCannon
+          enabled: true
+        - name: LandMover
+          enabled: true
+        - name: LogisticTrainNetwork
+          enabled: true
+        - name: nixie-tubes
+          enabled: false
+        - name: railloader
+          enabled: true
+        - name: robotarmy
+          enabled: true
+        - name: rso-mod
+          enabled: true
+        - name: Squeak Through
+          enabled: true
+        - name: stdlib
+          enabled: true
+        - name: textplates
+          enabled: true
+        - name: Todo-List
+          enabled: true
+        - name: VehicleSnap
+          enabled: true
+        - name: YARM
+          enabled: true
+        - name: LoaderRedux
+          enabled: true
+
+    - role: adamcharnock.factorio
+      service_port: 50002
+      service_name: factorio_2
+      service_root: /home/{{ service_user }}/{{ service_name }}
+      factorio_initial_save: "space-exploration.zip"
+
+      factorio_server_settings:
+        name: "Facebook Factorio Group - Space Exploration"
+        username: "{{ factorio_username }}"
+        token: "{{ factorio_token }}"
+
+        visibility:
+          public: true
+          lan: true
+
+      factorio_server_mod_list:
+        mods:
+        - name: AfraidOfTheDark
+          enabled: true
+        - name: AutoDeconstruct
+          enabled: true
+        - name: BigBags
+          enabled: true
+        - name: Big_Brother
+          enabled: true
+        - name: Bottleneck
+          enabled: true
+        - name: clock
+          enabled: true
+        - name: Companion_Drones
+          enabled: true
+        - name: EnableResearchQueue
+          enabled: true
+        - name: even-distribution
+          enabled: true
+        - name: far-reach
+          enabled: true
+        - name: FARL
+          enabled: true
+        - name: flib
+          enabled: true
+        - name: jetpack
+          enabled: true
+        - name: Kux-OrbitalIonCannon
+          enabled: true
+        - name: LandMover
+          enabled: true
+        - name: LogisticTrainNetwork
+          enabled: true
+        - name: nixie-tubes
+          enabled: false
+        - name: railloader
+          enabled: true
+        - name: robotarmy
+          enabled: true
+          # Space exploration is incompatible
+        - name: rso-mod
+          enabled: false
+        - name: Squeak Through
+          enabled: true
+        - name: stdlib
+          enabled: true
+        - name: textplates
+          enabled: true
+        - name: Todo-List
+          enabled: true
+        - name: VehicleSnap
+          enabled: true
+        - name: YARM
+          enabled: true
+        - name: LoaderRedux
+          enabled: true
+
+        # Start of space exploration related mods
+        - name: space-exploration
+          enabled: true
+        - name: space-exploration-postprocess
+          enabled: true
+        - name: grappling-gun
+          enabled: true
+        - name: aai-containers
+          enabled: true
+        - name: combat-mechanics-overhaul
+          enabled: true
+        - name: bullet-trails
+          enabled: true
+        - name: ModuleInserter
+          enabled: true
+        - name: equipment-gantry
+          enabled: true
+
+
 
     - petrichor_setup
     - basic_access
-
-  vars:
-    name_prefix: "Factorio Facebook Group - "
-    servers:
-    - name: vanilla
-      mod_list:
-        mods:
-          - name:
-            enabled: yes
-
