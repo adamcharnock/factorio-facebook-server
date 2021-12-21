@@ -2,8 +2,32 @@
 - name: Deploy factorio servers
   hosts: all
   become: yes
+  vars_files:
+    - "secrets.yml"
 
   roles:
+
+    - role: adamcharnock.factorio
+      service_port: 50001
+      service_name: factorio_1
+      service_root: /home/{{ service_user }}/{{ service_name }}
+
+      factorio_server_settings:
+        name: "Facebook Factorio Group - Vanilla"
+        username: "{{ factorio_username }}"
+        token: "{{ factorio_token }}"
+
+        visibility:
+          public: true
+          lan: true
+
+      factorio_server_mod_list:
+        mods:
+          - name: clock
+            enabled: yes
+          - name: FARL
+            enabled: yes
+
     - petrichor_setup
     - basic_access
 
@@ -11,7 +35,8 @@
     name_prefix: "Factorio Facebook Group - "
     servers:
     - name: vanilla
-      mods:
-        - foo
-        - bar
+      mod_list:
+        mods:
+          - name:
+            enabled: yes
 
