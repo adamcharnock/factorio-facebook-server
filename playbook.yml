@@ -1,0 +1,17 @@
+---
+- name: Deploy factorio servers
+  hosts: all
+  become: yes
+
+  roles:
+    - petrichor_setup
+    - basic_access
+
+  vars:
+    name_prefix: "Factorio Facebook Group - "
+    servers:
+    - name: vanilla
+      mods:
+        - foo
+        - bar
+
