@@ -19,6 +19,7 @@
         name: "Facebook Factorio Group - Vanilla"
         username: "{{ factorio_username }}"
         token: "{{ factorio_token }}"
+        game_password: "{{ game_password }}"
 
         visibility:
           public: true
@@ -95,6 +96,7 @@
         name: "Facebook Factorio Group - Space Exploration"
         username: "{{ factorio_username }}"
         token: "{{ factorio_token }}"
+        game_password: "{{ game_password }}"
 
         visibility:
           public: true
