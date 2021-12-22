@@ -30,7 +30,7 @@
           enabled: true
         - name: AutoDeconstruct
           enabled: true
-        - name: BigBags
+        - name: First_One_Is_Free
           enabled: true
         - name: Big_Brother
           enabled: true
@@ -80,6 +80,10 @@
           enabled: true
         - name: LoaderRedux
           enabled: true
+        - name: Warehousing
+          enabled: true
+        - name: Teleporters
+          enabled: true
 
     - role: adamcharnock.factorio
       service_port: 50002
@@ -102,7 +106,7 @@
           enabled: true
         - name: AutoDeconstruct
           enabled: true
-        - name: BigBags
+        - name: First_One_Is_Free
           enabled: true
         - name: Big_Brother
           enabled: true
