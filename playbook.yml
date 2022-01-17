@@ -5,7 +5,7 @@
   vars_files:
     - "secrets.yml"
   vars:
-    server_version: "1.1.49"
+    server_version: "1.1.50"
 
   roles:
 
@@ -14,6 +14,7 @@
       service_name: factorio_1
       service_root: /home/{{ service_user }}/{{ service_name }}
       factorio_initial_save: "vanilla.zip"
+      factorio_server_admin_list: ["adamcharnock"]
 
       factorio_server_settings:
         name: "Facebook Factorio Group - Vanilla"
@@ -55,8 +56,6 @@
           enabled: true
         - name: Kux-OrbitalIonCannon
           enabled: true
-        - name: LandMover
-          enabled: true
         - name: LogisticTrainNetwork
           enabled: true
         - name: nixie-tubes
@@ -85,12 +84,15 @@
           enabled: true
         - name: Teleporters
           enabled: true
+        - name: creative-mod
+          enabled: true
 
     - role: adamcharnock.factorio
       service_port: 50002
       service_name: factorio_2
       service_root: /home/{{ service_user }}/{{ service_name }}
       factorio_initial_save: "space-exploration.zip"
+      factorio_server_admin_list: ["adamcharnock"]
 
       factorio_server_settings:
         name: "Facebook Factorio Group - Space Exploration"
@@ -159,6 +161,8 @@
           enabled: true
         - name: LoaderRedux
           enabled: true
+        - name: helmod
+          enabled: true
 
         # Start of space exploration related mods
         - name: space-exploration
@@ -177,8 +181,9 @@
           enabled: true
         - name: equipment-gantry
           enabled: true
+        - name: FNEI
+          enabled: true
 
 
 
     - petrichor_setup
-    - basic_access
